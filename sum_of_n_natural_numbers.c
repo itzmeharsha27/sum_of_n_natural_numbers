@@ -1,21 +1,24 @@
 #include <stdio.h>
 
 int main() {
-    int n, sum_loop = 0, sum_formula;
+    int n;
+    int sum = 0;
 
-    printf("Enter a number: ");
+    printf("Enter a positive number: ");
     scanf("%d", &n);
 
-    // Loop method
-    for(int i = 1; i <= n; i++) {
-        sum_loop += i;
+    // Validate input
+    if(n <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 0;
     }
 
-    // Formula method
-    sum_formula = n * (n + 1) / 2;
+    // Calculate sum using loop
+    for(int i = 1; i <= n; i++) {
+        sum += i;
+    }
 
-    printf("Sum using loop = %d\n", sum_loop);
-    printf("Sum using formula = %d\n", sum_formula);
+    printf("Sum of first %d natural numbers = %d\n", n, sum);
 
     return 0;
 }
