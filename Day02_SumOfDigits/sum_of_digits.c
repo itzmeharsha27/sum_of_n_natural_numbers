@@ -6,13 +6,13 @@ int main() {
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    temp = n;
+    temp = n < 0 ? -n : n;
 
     while(temp != 0) {
         sum += temp % 10;
         temp /= 10;
     }
 
-    printf("Sum of digits of %d = %d\n", n, sum);
+    printf("Sum of digits = %d\n", sum);
     return 0;
 }
