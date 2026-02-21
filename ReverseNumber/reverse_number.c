@@ -6,11 +6,16 @@ int main() {
     printf("Enter a number: ");
     scanf("%d", &n);
 
+    if(n == 0) {
+        printf("Reversed number = 0\n");
+        return 0;
+    }
+
     temp = n < 0 ? -n : n;
 
-    while(temp != 0) {
-        rev = rev * 10 + (temp % 10);
-        temp /= 10;
+    while(temp > 0) {
+        rev = rev * 10 + (temp % 10); // build reverse
+        temp /= 10;                   // remove digit
     }
 
     if(n < 0)
